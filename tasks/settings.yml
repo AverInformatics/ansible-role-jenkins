@@ -60,14 +60,14 @@
     mode: 0775
   notify: restart jenkins
 
-- name: Copy custom java init script
-  template:
-    src: "{{ role_path }}/templates/java.groovy.j2"
-    dest: "{{ jenkins_home }}/init.groovy.d/java.groovy"
-    owner: "{{ jenkins_process_user }}"
-    group: "{{ jenkins_process_group }}"
-    mode: 0775
-  notify: restart jenkins
+#- name: Copy custom java init script
+#  template:
+#    src: "{{ role_path }}/templates/java.groovy.j2"
+#    dest: "{{ jenkins_home }}/init.groovy.d/java.groovy"
+#    owner: "{{ jenkins_process_user }}"
+#    group: "{{ jenkins_process_group }}"
+#    mode: 0775
+#  notify: restart jenkins
 
 - name: Trigger handlers immediately in case Jenkins was installed
   meta: flush_handlers
