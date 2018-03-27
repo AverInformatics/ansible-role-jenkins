@@ -17,11 +17,11 @@
     line: 'JENKINS_HOME={{ jenkins_home }}'
   register: jenkins_home_config
 
-- name: Add jenkins user to docker group
-  user:
-    name: jenkins
-    append: yes
-    groups: docker
+#- name: Add jenkins user to docker group
+#  user:
+#    name: jenkins
+#    append: yes
+#    groups: docker
 
 - name: Immediately restart Jenkins on init config changes.
   service: name=jenkins state=restarted
